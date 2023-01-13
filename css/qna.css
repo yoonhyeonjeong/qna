@@ -1,0 +1,127 @@
+body{
+    background: linear-gradient(to right, #eafffc 0%,#f0e8ff 100%);   
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    min-height: 100%;
+}
+.container{
+    display: flex;
+    width: 1200px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.welcome{
+    padding: 100px;
+    margin-top: 100px;
+    box-shadow: #ddd 0px 0px 10px 5px;
+    border-radius: 30px;
+    background: #fff;
+}
+.welcome-title{
+    padding-bottom: 50px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.welcome-sec{
+    font-size: 30px;
+}
+.welcome-info-box{
+    margin-top: 50px;
+}
+.input-box{
+    margin-top: 50px;
+}
+.input-box input{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 1px solid #eee;
+}
+.input-box .input-notice{}
+.input-box .start-btn{
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 15px 0;
+    background: #dbd1ef;
+    color: #fff;
+}
+.qna{
+    margin-top: 100px;
+}
+.progress-bar{
+    display: none;
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    background: #DFE4EA;
+    margin-bottom: 20px;
+}
+.progress-guage{
+    position: relative;
+    width: 0%;
+    height: 30px;
+    border-radius: 30px;
+    background: #009574;
+    transition: all 0.4s;
+}
+.progress-score{
+    position: absolute;
+    top: -36px;
+    left: 40px;
+    width: 50px;
+    height: 30px;
+    border: solid 1px;
+}
+.question{
+    font-size: 30px;
+    font-weight: bold;
+}
+.answer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.answer-btn{
+    padding: 20px 15px;
+    box-shadow: #eaeaea 0px 0px 10px 1px;
+    background: #fff;
+    border-radius: 30px;
+    font-size: 18px;
+}
+.answer-btn + .answer-btn{
+    margin-top: 30px;
+}
+.result{
+    padding-top: 100px;
+}
+.desc-box{
+ 
+}
+.desc-box .test-info{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+.test-img img{
+    height: 700px;
+}
+.test-result{
+    margin-top: 30px;
+}
+.test-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+.test-desc{
+    font-size: 18px;
+}
