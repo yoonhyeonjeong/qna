@@ -7,17 +7,40 @@ body{
     max-width: 100%;
     min-height: 100%;
 }
+.switch-mode{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    min-width: 60%;
+    height: 85px;
+    margin: 0 auto;
+    border-radius:30px;
+    background: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.switch-btn{
+    display: flex;
+    width: 100%;
+    background: url(/img/night.png) no-repeat center center;
+    background-size: 85px;
+}
 .container{
     display: flex;
-    width: 1200px;
     justify-content: center;
     text-align: center;
     margin: 0 auto;
 }
 .welcome{
+    width: 60%;
+    min-width: 60%;
+    margin: 140px auto;
+    text-align: center;
     padding: 100px;
-    margin-top: 100px;
-    box-shadow: #ddd 0px 0px 10px 5px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     background: #fff;
 }
@@ -44,46 +67,55 @@ body{
     border-radius: 30px;
     border: 1px solid #eee;
 }
-.input-box .input-notice{}
 .input-box .start-btn{
     margin-top: 20px;
     width: 300px;
     border-radius: 30px;
     font-size: 20px;
     padding: 15px 0;
-    background: #dbd1ef;
+    background: #b89eed;
     color: #fff;
 }
 .qna{
-    margin-top: 100px;
+    width: 60%;
+    min-width: 60%;
+    margin: 140px auto;
 }
 .progress-bar{
     display: none;
     width: 100%;
-    height: 30px;
+    height: 25px;
     border-radius: 30px;
-    background: #DFE4EA;
+    background: #f7f7f7;
     margin-bottom: 20px;
 }
 .progress-guage{
     position: relative;
-    width: 0%;
-    height: 30px;
+    height: 25px;
     border-radius: 30px;
-    background: #009574;
+    background: #906cdb;
     transition: all 0.4s;
 }
 .progress-score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: -36px;
-    left: 40px;
+    right: 0;
     width: 50px;
     height: 30px;
-    border: solid 1px;
+    background: #906cdb;
+    border-radius: 10px 10px 10px 0;
+    color: #fff;
+}
+.progress-score.half{
+    border-radius: 10px 10px 0 10px;
 }
 .question{
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
 }
 .answer{
     display: flex;
@@ -92,7 +124,7 @@ body{
 }
 .answer-btn{
     padding: 20px 15px;
-    box-shadow: #eaeaea 0px 0px 10px 1px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 30px;
     font-size: 18px;
@@ -100,11 +132,44 @@ body{
 .answer-btn + .answer-btn{
     margin-top: 30px;
 }
+.calc-box{
+    display: none;
+    width: 60%;
+    min-width: 60%;
+    margin: 140px auto;
+}
+.calc-bar{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 30px;
+    color: #fff;
+    background: black;
+    text-align: center;
+}
+.calc-box .calc{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #57a0db 1%,#e577c4 100%);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: ease 0.3s;
+}
 .result{
-    padding-top: 100px;
+    display: none;
+    width: 60%;
+    min-width: 60%;
+    margin: 140px auto;
+    padding: 100px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    background: #fff;
 }
 .desc-box{
- 
+    text-align: center;
 }
 .desc-box .test-info{
     font-size: 30px;
@@ -123,5 +188,22 @@ body{
     font-weight: bold;
 }
 .test-desc{
+    margin-top: 20px;
     font-size: 18px;
 }
+
+/* 반응형 */
+/* @media screen and (max-width: 1000px) {
+    .switch-mode,.welcome,.qna,.calc-box,.result{
+        width: 50%;
+        min-width: 50%;
+    }
+   
+  } */
+  
+  @media all and (min-width: 768px) {
+
+
+  }
+
+

@@ -3,42 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/qna.css">
     <title>10가지 질문으로 알아보는 내 이미지</title>
 </head>
 <body>
     <div class="wrap">
-        <div class="container">
-            <section class="welcome">
-                <h2 class="welcome-title">10 Things<br>I Know About You</h2>
-                <p class="welcome-sec">10가지 질문으로<br>알아보는 내 이미지</p>
-                <div class="welcome-info-box">
-                    <div class="welcome-info">이 테스트로 당신은 타인이 보는 당신의 이미지를 알 수 있습니다.<br>
-                        테스트 결과로 사람들이 보는 당신의 이미지와 그 강점을 알아보세요!
-                    </div>
+        <header class="switch-mode">
+            <button class="switch-btn" onclick="switchMode()"></button>
+        </header>
+        <section class="welcome">
+            <h2 class="welcome-title">10 Things<br>I Know About You</h2>
+            <p class="welcome-sec">10가지 질문으로<br>알아보는 내 이미지</p>
+            <div class="welcome-info-box">
+                <div class="welcome-info">이 테스트로 당신은 타인이 보는 당신의 이미지를 알 수 있습니다.<br>
+                    테스트 결과로 사람들이 보는 당신의 이미지와 그 강점을 알아보세요!
                 </div>
-                <div class="input-box">
-                    <input type="text" class="input" placeholder="이름을 입력해주세요"autofocus>
-                    <p class="input-notice"></p>
-                    <button class="start-btn">시작</button>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input" placeholder="이름을 입력해주세요"autofocus>
+                <p class="input-notice"></p>
+                <button class="start-btn">시작</button>
+            </div>
+        </section>
+        <section class="qna">
+            <div class="progress-bar">
+                <div class="progress-guage">
+                    <span class="progress-score"></span>
                 </div>
-            </section>
-            <section class="qna">
-                <div class="progress-bar">
-                    <div class="progress-guage">
-                        <span class="progress-score"></span>
-                    </div>
-                </div>
-                <div class="question"></div>
-                <div class="answer"></div>
-            </section>
-            <section class="result">
-                <div class="score-box"></div>
-                <div class="desc-box"></div>
-            </section>
-        </div>
+            </div>
+            <div class="question"></div>
+            <div class="answer"></div>
+        </section>
+        <section class="calc-box">
+            <div class="calc-bar">
+                CALCULATING
+                <div class="calc"></div>
+            </div>
+        </section>
+        <section class="result">
+            <div class="score-box"></div>
+            <div class="desc-box"></div>
+        </section>
     </div>
     <script src="/js/data.js"></script>
     <script src="/js/main.js"></script>

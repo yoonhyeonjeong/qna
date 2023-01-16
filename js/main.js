@@ -10,6 +10,7 @@ const question  = document.querySelector('.question');
 const answer  = document.querySelector('.answer');
 const progressBar = document.querySelector('.progress-bar');
 let progressGuage = document.querySelector('.progress-guage');
+let progressScore = document.querySelector('.progress-score');
 
 let result = document.querySelector('.result');
 let desc = document.querySelector('.desc-box')
@@ -50,12 +51,16 @@ function questionBox(object) {
 
     // 첫번째 질문 뿌리기~ 
     question.innerText += object.q
-    // 첫번째 프로그레스
-    // let percent  = 1 / qnaList.length * 100;
-    // progressGuage.style.width = percent + '%';
-    // let progressScore = document.querySelector('.progress-score');
-    // progressScore.innerText = percent + '%';
 
+    // 첫번째 프로그레스
+    if(index === 0){
+        let percent  = 1 / qnaList.length * 100;
+        progressGuage.style.width = percent + '%';
+        progressScore.style.right = '-' + progressScore.clientWidth + 'px';
+        progressScore.innerText = percent + ' %';
+    }
+
+    // 버튼 생성
     for(let i = 0; i < object.a.length; i++){
         let btn = `<button class="answer-btn" data-score="${object.a[i].score}">${object.a[i].answer}</button>`
         answer.innerHTML += btn
@@ -68,24 +73,44 @@ function questionBox(object) {
     answerBtn.forEach((currentElement, i)=>{
         answerBtn[i].addEventListener('click', ()=>{
             index++; // 클릭할때마다 인덱스 +
-            console.log(index);
             scoreTotal += Number(answerBtn[i].dataset.score)
-            console.log('점수합산', scoreTotal)
 
             // progress bar
-            let percent  = index / qnaList.length * 100;
+            percent  = (index + 1) / qnaList.length * 100;
             progressGuage.style.width = percent + '%';
-            console.log(percent, progressGuage.style.width)
-            let progressScore = document.querySelector('.progress-score');
-            progressScore.innerText = percent + '%';
+            progressScore.innerText = percent + ' %';
+
+            // percent 가 50이상일때
+            if(percent >= 50){
+                progressScore.classList.add('half')
+                progressScore.style.right = 0 + 'px';
+            }
             // 클릭할때 질문, 답 초기화
             question.innerText = '';
             answer.innerHTML = '';
             // 다시 호출
             questionBox(qnaList[index]);
 
+            //마지막질문
+            if(index === qnaList.length){
+                // calculating bar
+                document.querySelector(".calc-box").style.display = 'block';
+                let calc = document.querySelector(".calc");
+                let barWidth = 0;
+                const animate = () => {
+                    barWidth++;
+                    calc.style.width = `${barWidth}%`;
+                }
+                let intervalID = setInterval(() => {
+                    if (barWidth === 100) {
+                    clearInterval(intervalID);
+                    } else {
+                    animate();
+                    }
+                }, 30);
 
-            if(index === 10){
+                result.style.display = 'block';
+                progressBar.style.display = 'none';
                 progressScore.style.display = 'none';
                 for(let i = 0; i < infoList.length; i++){
                     console.log(scoreTotal);
@@ -94,7 +119,7 @@ function questionBox(object) {
                         let info = `
                         <p class="test-info">${input.value}님의 점수는..<br> ${scoreTotal}점</p>
                         <div class="test-img">
-                            <img src="/img/image-${i}.png" alt="${infoList[i].name}" title="${infoList[i].name}">+
+                            <img src="/img/image-${i}.png" alt="${infoList[i].name}" title="${infoList[i].name}">
                         </div>
                         <div class="test-result">
                             <p class="test-name">${infoList[i].name}</p>
@@ -114,3 +139,26 @@ function questionBox(object) {
 
     
 }
+
+// switch mode
+let flag = false;
+const head = document.getElementsByTagName('head')[0];
+const dark_css = document.createElement('link');
+dark_css.rel = 'stylesheet';
+dark_css.type = 'text/css';
+dark_css.href = 'css/darkmode.css';
+
+const darkMode = () => {
+  flag = true;
+  head.appendChild(dark_css);
+}
+const lightMode = () => {
+  flag = false;
+  if (head.lastChild === dark_css){
+      head.removeChild(dark_css);
+  }
+}
+const switchMode = () => flag ? lightMode() : darkMode();
+
+
+

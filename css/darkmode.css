@@ -1,0 +1,28 @@
+*{
+    color: #fff;
+    transition: all 0.3s;
+}
+body{
+    background: linear-gradient(to right, #0e3a70 0%,#43094f 100%);
+}
+.switch-mode{
+    background: #111;;
+}
+.switch-btn{
+    background: url(/img/day.png) no-repeat center center;
+    background-size: 85px;
+
+}
+.input-box input{
+    color: #111;
+}
+.welcome, .result{
+    background: #111;
+}
+.answer-btn {
+    color: #fff;
+    background: #111;
+}
+.progress-guage, .progress-score{
+    background:#7347cd
+}
