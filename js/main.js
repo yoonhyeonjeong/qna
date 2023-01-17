@@ -21,6 +21,7 @@ input.addEventListener('blur', ()=>{
         if(input.value.length < 1){
             throw  '이름을 입력하고 시작해 주세요.';
         }
+        msg.innerHTML = '';
     } catch (error) {
         message.innerText = error;
         message.style.color = 'red';
@@ -32,7 +33,18 @@ input.addEventListener('blur', ()=>{
 
 // 시작이벤트
 startBtn.addEventListener('click', ()=>{
-    questionBox(qnaList[index]);
+    try {
+        if(input.value.length < 1){
+            throw  '이름을 입력하고 시작해 주세요.';
+        }
+        msg.innerHTML = '';
+        questionBox(qnaList[index]);
+    } catch (error) {
+        message.innerText = error;
+        message.style.color = 'red';
+        message.style.paddingTop = '10px';
+        input.style.border = '2px solid red';
+    }
 })
 
 
