@@ -6,7 +6,15 @@ body{
     height: 100%;
     max-width: 100%;
     min-height: 100%;
+    padding: 9.375rem 0;
 }
+.container{
+    padding: 5rem;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    background: #fff;
+}
+/* header */
 .switch-mode{
     position: fixed;
     top: 0;
@@ -16,7 +24,7 @@ body{
     justify-content: center;
     width: 60%;
     min-width: 60%;
-    height: 85px;
+    height: 5.3rem;
     margin: 0 auto;
     border-radius:30px;
     background: #fff;
@@ -26,72 +34,76 @@ body{
     display: flex;
     width: 100%;
     background: url(/img/night.png) no-repeat center center;
-    background-size: 85px;
+    background-size: 5.3rem;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-}
+/* welcome section */
 .welcome{
     width: 60%;
     min-width: 60%;
-    margin: 140px auto;
+    margin: 0 auto;
     text-align: center;
-    padding: 100px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    background: #fff;
 }
 .welcome-title{
-    padding-bottom: 50px;
-    font-size: 50px;
+    padding-bottom: 1.6rem;
+    font-size: 3.437rem;
     font-weight: bold;
 }
 .welcome-sec{
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 .welcome-info-box{
-    margin-top: 50px;
+    margin-top: 3.125rem;
+}
+.welcome-info{
+    font-size: 1.125rem;
 }
 .input-box{
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.125rem;
 }
 .input-box input{
-    width: 300px;
-    height: 50px;
+    width: 31.25rem;
+    height: 3.125rem;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
+    color: #111;
     font-weight: bold;
     border-radius: 30px;
     border: 1px solid #eee;
 }
 .input-box .start-btn{
-    margin-top: 20px;
-    width: 300px;
+    margin-top: 1.25rem;
+    width: 18.75rem;
     border-radius: 30px;
-    font-size: 20px;
-    padding: 15px 0;
+    font-size: 1.25rem;
+    padding: 0.937rem 0;
     background: #b89eed;
     color: #fff;
 }
+.input-box .input-notice{
+    font-size: 1.125rem;
+}
+/* qna section */
 .qna{
+    display: none;
     width: 60%;
     min-width: 60%;
-    margin: 140px auto;
+    margin: 0 auto;
 }
 .progress-bar{
     display: none;
     width: 100%;
-    height: 25px;
+    height: 1.56rem;
     border-radius: 30px;
     background: #f7f7f7;
-    margin-bottom: 20px;
+    margin-bottom: 1.56rem;
 }
 .progress-guage{
     position: relative;
-    height: 25px;
+    height: inherit;
     border-radius: 30px;
     background: #906cdb;
     transition: all 0.4s;
@@ -101,11 +113,13 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -36px;
+    top: -2.25rem;
     right: 0;
-    width: 50px;
-    height: 30px;
+    width: auto;
+    height: 1.875rem;
+    padding: 0.312rem;
     background: #906cdb;
+    font-size: 1rem;
     border-radius: 10px 10px 10px 0;
     color: #fff;
 }
@@ -113,37 +127,38 @@ body{
     border-radius: 10px 10px 0 10px;
 }
 .question{
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: bold;
     text-align: center;
 }
 .answer{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 2.5rem;
 }
 .answer-btn{
-    padding: 20px 15px;
+    padding: 1.562rem;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 30px;
-    font-size: 18px;
+    font-size: 1.25rem;
 }
 .answer-btn + .answer-btn{
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
+/* calcalute section */
 .calc-box{
     display: none;
     width: 60%;
     min-width: 60%;
-    margin: 140px auto;
+    margin: 6.25rem auto 0;
 }
 .calc-bar{
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 3.125rem;
     border-radius: 30px;
-    font-size: 30px;
+    font-size: 1.875rem;
     color: #fff;
     background: black;
     text-align: center;
@@ -152,58 +167,80 @@ body{
     position: absolute;
     left: 0;
     top: 0;
-    height: 50px;
+    height: inherit;
     border-radius: 30px;
     background: linear-gradient(to right, #57a0db 1%,#e577c4 100%);
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     transition: ease 0.3s;
 }
+/* result section */
 .result{
     display: none;
     width: 60%;
     min-width: 60%;
-    margin: 140px auto;
-    padding: 100px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    background: #fff;
+    margin: 0 auto;
 }
 .desc-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 .desc-box .test-info{
-    font-size: 30px;
+    font-size: 2.8rem;
     font-weight: bold;
-    margin-bottom: 30px;
-
+    margin-bottom: 1.875rem;
+}
+.test-img{
+    height: 37.5rem;
 }
 .test-img img{
-    height: 700px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .test-result{
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 .test-name{
-    font-size: 20px;
+    font-size: 1.875rem;
     font-weight: bold;
 }
 .test-desc{
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
 }
 
 /* 반응형 */
-/* @media screen and (max-width: 1000px) {
-    .switch-mode,.welcome,.qna,.calc-box,.result{
-        width: 50%;
-        min-width: 50%;
+@media all and (max-width: 1024px) {
+html{
+    font-size: 14px;
+}
+.input-box input{
+    width: 25rem;
+}
+}
+@media all and (max-width: 768px) {
+    html{
+        font-size: 12px;
     }
-   
-  } */
-  
-  @media all and (min-width: 768px) {
-
-
-  }
+    .wrap{
+        padding: 5.375rem 0;
+    }
+    .qna{
+        padding-top: 4rem;
+    }
+    .switch-mode, .welcome, .result{
+        width: 100%;
+        border-radius: 0;
+    }
+    .qna, .calc-box{
+        width: 80%;
+    }
+    .test-img{
+        height: 30rem;
+    }
+} 
 
 

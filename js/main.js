@@ -48,6 +48,7 @@ function questionBox(object) {
 
     welcome.style.display = 'none';
     progressBar.style.display = 'block';
+    qna.style.display = 'block';
 
     // 첫번째 질문 뿌리기~ 
     question.innerText += object.q
@@ -94,24 +95,29 @@ function questionBox(object) {
             //마지막질문
             if(index === qnaList.length){
                 // calculating bar
-                document.querySelector(".calc-box").style.display = 'block';
-                let calc = document.querySelector(".calc");
-                let barWidth = 0;
-                const animate = () => {
-                    barWidth++;
-                    calc.style.width = `${barWidth}%`;
-                }
-                let intervalID = setInterval(() => {
-                    if (barWidth === 100) {
-                    clearInterval(intervalID);
-                    } else {
-                    animate();
-                    }
-                }, 30);
+                // document.querySelector(".calc-box").style.display = 'block';
+                // const calcTxt = document.querySelector('.calc-txt');
+                // let calc = document.querySelector(".calc");
+                // let barWidth = 0;
+                // const animate = () => {
+                //     barWidth++;
+                //     calc.style.width = `${barWidth}%`;
+                //     calcTxt.innerText = '잠시만 기다려주세요';
+                //     calcTxt.style.display = 'block';
+                // }
+                // let intervalID = setInterval(() => {
+                //     if (barWidth === 100) {
+                //     clearInterval(intervalID);
+                //     } else {
+                //     animate();
+                //     }
+                // }, 30);
 
+                qna.style.display = 'none';
                 result.style.display = 'block';
                 progressBar.style.display = 'none';
                 progressScore.style.display = 'none';
+
                 for(let i = 0; i < infoList.length; i++){
                     console.log(scoreTotal);
                     //점수에 따른 결과값 출력
