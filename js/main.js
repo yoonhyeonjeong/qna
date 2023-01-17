@@ -47,8 +47,9 @@ function questionBox(object) {
     }
 
     welcome.style.display = 'none';
-    progressBar.style.display = 'block';
     qna.style.display = 'block';
+    progressBar.classList.add('ani')
+    question.classList.add('ani')
 
     // 첫번째 질문 뿌리기~ 
     question.innerText += object.q
@@ -64,7 +65,8 @@ function questionBox(object) {
     // 버튼 생성
     for(let i = 0; i < object.a.length; i++){
         let btn = `<button class="answer-btn" data-score="${object.a[i].score}">${object.a[i].answer}</button>`
-        answer.innerHTML += btn
+        answer.innerHTML += btn;
+        answer.classList.add('ani');
     }
 
     
@@ -73,6 +75,7 @@ function questionBox(object) {
 
     answerBtn.forEach((currentElement, i)=>{
         answerBtn[i].addEventListener('click', ()=>{
+            // answerBtn.classList.add('ani');
             index++; // 클릭할때마다 인덱스 +
             scoreTotal += Number(answerBtn[i].dataset.score)
 
@@ -135,8 +138,6 @@ function questionBox(object) {
                         desc.innerHTML += info
                     }
                 }
-                
-
             }
         })
 
