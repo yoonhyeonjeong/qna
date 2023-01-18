@@ -33,7 +33,7 @@ body{
 .switch-btn{
     display: flex;
     width: 100%;
-    background: url(./img/night.png) no-repeat center center;
+    background: url(/img/night.png) no-repeat center center;
     background-size: 5.3rem;
 }
 /* welcome section */

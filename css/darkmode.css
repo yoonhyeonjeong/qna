@@ -9,7 +9,7 @@ body{
     background: #111;;
 }
 .switch-btn{
-    background: url(./img/day.png) no-repeat center center;
+    background: url(/img/day.png) no-repeat center center;
     background-size: 5.3rem;
 
 }
