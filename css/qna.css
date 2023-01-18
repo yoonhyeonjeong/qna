@@ -159,9 +159,15 @@ body{
     background: #fff;
     border-radius: 30px;
     font-size: 1.25rem;
+    transition: all 0.3s;
 }
 .answer-btn + .answer-btn{
     margin-top: 1.875rem;
+}
+.answer-btn:hover{
+    background: #111;
+    color: #fff;
+    opacity: 0.8;
 }
 /* calcalute section */
 .calc-box{
@@ -173,12 +179,22 @@ body{
 .calc-bar{
     position: relative;
     width: 100%;
-    height: 3.125rem;
+    height: 3rem;
     border-radius: 30px;
     font-size: 1.875rem;
     color: #fff;
     background: black;
     text-align: center;
+    opacity: 0;
+    animation-delay: 1s!important;
+}
+.calc-box .calc-txt{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    padding-bottom: 3rem;
+    opacity: 0;
+    animation-delay: 0.5s!important;
 }
 .calc-box .calc{
     position: absolute;
@@ -192,6 +208,7 @@ body{
 }
 /* result section */
 .result{
+    opacity: 0;
     display: none;
     width: 60%;
     min-width: 60%;
@@ -208,14 +225,14 @@ body{
     font-weight: bold;
     margin-bottom: 1.875rem;
     opacity: 0;
-    animation: fade-in 0.5s ease-out 0.5s forwards,
-    going-down 0.5s ease-out 0.5s forwards;
+    animation: fade-in 0.5s ease-out 1s forwards,
+    going-down 0.5s ease-out 1s forwards;
 }
 .test-img{
     height: 37.5rem;
     opacity: 0;
-    animation: fade-in 0.5s ease-out 1s forwards,
-    going-down 0.5s ease-out 1s forwards;
+    animation: fade-in 0.5s ease-out 1.5s forwards,
+    going-down 0.5s ease-out 1.5s forwards;
 }
 .test-img img{
     display: block;
@@ -230,15 +247,15 @@ body{
     font-size: 1.875rem;
     font-weight: bold;
     opacity: 0;
-    animation: fade-in 0.5s ease-out 1.5s forwards,
-    going-down 0.5s ease-out 1.5s forwards;
+    animation: fade-in 0.5s ease-out 2s forwards,
+    going-down 0.5s ease-out 2s forwards;
 }
 .test-desc{
     margin-top: 1.25rem;
     font-size: 1.25rem;
     opacity: 0;
-    animation: fade-in 0.5s ease-out 2s forwards,
-    going-down 0.5s ease-out 2s forwards;
+    animation: fade-in 0.5s ease-out 2.5s forwards,
+    going-down 0.5s ease-out 2.5s forwards;
 }
 .test-btn{
     margin-top: 1.25rem;
@@ -250,8 +267,8 @@ body{
     color: #fff;
     margin: 2rem auto 0;
     opacity: 0;
-    animation: fade-in 0.5s ease-out 2.5s forwards,
-    going-down 0.5s ease-out 2.5s forwards;
+    animation: fade-in 0.5s ease-out 3s forwards,
+    going-down 0.5s ease-out 3s forwards;
 }
 /* animation */
 @-webkit-keyframes fade-in {
@@ -313,6 +330,9 @@ html{
     .wrap{
         padding: 5.375rem 0;
     }
+    .container{
+        padding: 3rem;
+    }
     .qna{
         padding-top: 4rem;
     }
@@ -320,14 +340,28 @@ html{
         width: 100%;
         border-radius: 0;
     }
+    .welcome, .result{
+        box-shadow: none;
+    }
     .qna, .calc-box{
         width: 80%;
     }
     .test-info{
-        font-size: 2.5rem;
+        font-size: 2.5rem!important;
+        animation-delay: 0.25s!important;
     }
     .test-img{
-        height: 30rem;
+        height: 30rem!important;
+        animation-delay: 0.75s!important;
+    }
+    .test-name{
+        animation-delay: 1.25s!important;
+    }
+    .test-desc{
+        animation-delay: 1.75s!important;
+    }
+    .result.ani{
+        animation: fade-in 0.2s ease-out forwards, going-down 0.2s ease-out forwards;
     }
 } 
 

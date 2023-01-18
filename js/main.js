@@ -21,7 +21,6 @@ input.addEventListener('blur', ()=>{
         if(input.value.length < 1){
             throw  '이름을 입력하고 시작해 주세요.';
         }
-        msg.innerHTML = '';
     } catch (error) {
         message.innerText = error;
         message.style.color = 'red';
@@ -37,7 +36,6 @@ startBtn.addEventListener('click', ()=>{
         if(input.value.length < 1){
             throw  '이름을 입력하고 시작해 주세요.';
         }
-        msg.innerHTML = '';
         questionBox(qnaList[index]);
     } catch (error) {
         message.innerText = error;
@@ -46,8 +44,6 @@ startBtn.addEventListener('click', ()=>{
         input.style.border = '2px solid red';
     }
 })
-
-
 
 let index = 0;
 let scoreTotal = 0;
@@ -60,8 +56,6 @@ function questionBox(object) {
 
     welcome.style.display = 'none';
     qna.style.display = 'block';
-    progressBar.classList.add('ani')
-    question.classList.add('ani')
 
     // 첫번째 질문 뿌리기~ 
     question.innerText += object.q
@@ -70,15 +64,17 @@ function questionBox(object) {
     if(index === 0){
         let percent  = 1 / qnaList.length * 100;
         progressGuage.style.width = percent + '%';
-        progressScore.style.right = '-' + progressScore.clientWidth + 'px';
+        progressScore.style.right = ('-' + progressScore.clientWidth) * 4 + 'px';
         progressScore.innerText = percent + ' %';
+        progressBar.classList.add('ani')
+        question.classList.add('ani');
+        answer.classList.add('ani');
     }
 
     // 버튼 생성
     for(let i = 0; i < object.a.length; i++){
         let btn = `<button class="answer-btn" data-score="${object.a[i].score}">${object.a[i].answer}</button>`
         answer.innerHTML += btn;
-        answer.classList.add('ani');
     }
 
     
@@ -87,7 +83,6 @@ function questionBox(object) {
 
     answerBtn.forEach((currentElement, i)=>{
         answerBtn[i].addEventListener('click', ()=>{
-            // answerBtn.classList.add('ani');
             index++; // 클릭할때마다 인덱스 +
             scoreTotal += Number(answerBtn[i].dataset.score)
 
@@ -110,26 +105,44 @@ function questionBox(object) {
             //마지막질문
             if(index === qnaList.length){
                 // calculating bar
-                // document.querySelector(".calc-box").style.display = 'block';
-                // const calcTxt = document.querySelector('.calc-txt');
-                // let calc = document.querySelector(".calc");
-                // let barWidth = 0;
-                // const animate = () => {
-                //     barWidth++;
-                //     calc.style.width = `${barWidth}%`;
-                //     calcTxt.innerText = '잠시만 기다려주세요';
-                //     calcTxt.style.display = 'block';
-                // }
-                // let intervalID = setInterval(() => {
-                //     if (barWidth === 100) {
-                //     clearInterval(intervalID);
-                //     } else {
-                //     animate();
-                //     }
-                // }, 30);
+                const calcBox = document.querySelector('.calc-box');
+                const calcTxt = document.querySelector('.calc-txt');
+                const calcbar = document.querySelector('.calc-bar');
+                let calc = document.querySelector(".calc");
+                let barWidth = 0;
+
+                setTimeout(() => {
+                    calcBox.style.display = 'block'
+                    calcbar.classList.add('ani');
+                    calcTxt.classList.add('ani');
+                 }, 500);
+
+                 setTimeout(() => {
+                    calcBox.style.display = 'none'
+                    calcbar.classList.remove('ani');
+                    calcTxt.classList.remove('ani');
+                    calcBox.classList.add('ani02');
+                }, 4000);
+
+                const animate = () => {
+                    barWidth++;
+                    calc.style.width = `${barWidth}%`;
+                    calcTxt.innerText = '잠시만 기다려주세요';
+                }
+                let intervalID = setInterval(() => {
+                    if (barWidth === 100) {
+                    clearInterval(intervalID);
+                    } else {
+                    animate();
+                    }
+                }, 30);
+
+                setTimeout(() => {
+                    result.style.display = 'block'
+                    result.classList.add('ani');
+                }, 4700);
 
                 qna.style.display = 'none';
-                result.style.display = 'block';
                 progressBar.style.display = 'none';
                 progressScore.style.display = 'none';
 
@@ -152,11 +165,7 @@ function questionBox(object) {
                 }
             }
         })
-
-        
     })
-
-    
 }
 
 // switch mode
@@ -178,6 +187,4 @@ const lightMode = () => {
   }
 }
 const switchMode = () => flag ? lightMode() : darkMode();
-
-
 

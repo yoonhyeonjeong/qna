@@ -22,7 +22,18 @@ body{
 .answer-btn {
     color: #fff;
     background: #111;
+    transition: all 0.3s;
+}
+.answer-btn:hover{
+    background: #fff;
+    color: #111;
+    opacity: 0.8;
 }
 .progress-guage, .progress-score{
     background:#7347cd
+}
+@media all and (max-width: 768px) {
+    body{
+        background: #111;
+    }
 }
