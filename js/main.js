@@ -153,7 +153,7 @@ function questionBox(object) {
                         let info = `
                         <p class="test-info">${input.value}님의 점수는..<br> ${scoreTotal}점</p>
                         <div class="test-img">
-                            <img src="/img/image-${i}.png" alt="${infoList[i].name}" title="${infoList[i].name}">
+                            <img src="./../img/image-${i}.png" alt="${infoList[i].name}" title="${infoList[i].name}">
                         </div>
                         <div class="test-result">
                             <p class="test-name">${infoList[i].name}</p>
