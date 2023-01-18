@@ -1,5 +1,5 @@
 // 외부 js 호출(data.js)
-document.write('<script src="/data.js"></script>');
+document.write('<script src="./data.js"></script>');
 
 const startBtn = document.querySelector(".start-btn");
 const input = document.querySelector(".input")
