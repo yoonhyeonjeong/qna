@@ -21,14 +21,9 @@ body{
     background: #111;
 }
 .answer-btn {
-    color: #fff;
-    background: #111;
-    transition: all 0.3s;
-}
-.answer-btn:hover{
-    background: #fff;
     color: #111;
-    opacity: 0.8;
+    background: #fff;
+    transition: all 0.3s;
 }
 .progress-guage, .progress-score{
     background:#7347cd
@@ -36,5 +31,13 @@ body{
 @media all and (max-width: 768px) {
     body{
         background: #111;
+    }
+}
+/* pc에서만 버튼 hover적용 */
+@media (hover: hover) {
+    .answer-btn:hover{
+        background: #fff;
+        color: #111;
+        opacity: 0.8;
     }
 }
